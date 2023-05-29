@@ -5,6 +5,7 @@ export default component$(() => {
     <div>
       <HelloWorld />
       <div>Change me please!</div>
+      <button onClick$={() => console.log('Hello Qwik !')}>Say Hi</button>
     </div>
   );
 });
