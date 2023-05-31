@@ -1,16 +1,16 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { Slot, component$, useSignal } from "@builder.io/qwik";
 
 export default component$(() => {
-  let isVisible = useSignal(false);
+  const isVisible = useSignal(false);
   return (
     <div>
       <button onClick$={() => (isVisible.value = !isVisible.value)}>
         Toggle Visibility
       </button>
       {isVisible.value && (
-        <div>
-          <HelloWorld />
-        </div>
+        <HelloWorld>
+          <h1>Hello World ! is visible !!!</h1>
+        </HelloWorld>
       )}
     </div>
   );
@@ -19,7 +19,7 @@ export default component$(() => {
 export const HelloWorld = component$(() => {
   return (
     <div>
-      <h1>Hello World ! is visible !!!</h1>
+      <Slot />
     </div>
   );
 });
