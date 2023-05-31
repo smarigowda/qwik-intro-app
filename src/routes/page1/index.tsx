@@ -17,7 +17,7 @@ export default component$(() => {
         }
       />
       <hr />
-      <Projector message={messageSignal.value} />
+      <Projector message={messageSignal.value} >Message... !</Projector>
     </div>
   );
 });
