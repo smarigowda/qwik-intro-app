@@ -24,13 +24,12 @@ export default component$(() => {
       <button onClick$={() => (isVisible.value = !isVisible.value)}>
         Toggle Visibility
       </button>
+      <BeerGiver isBeerGiven={isBeerGiven} />
       {isVisible.value && (
         <HelloWorld>
           <h1>Hello World ! is visible !!!</h1>
         </HelloWorld>
       )}
-
-      <BeerGiver isBeerGiven={isBeerGiven} />
     </div>
   );
 });
@@ -50,13 +49,15 @@ export interface BeerGiverProps {
 export const BeerGiver = component$((props: BeerGiverProps) => {
   return (
     <>
-      <button
-        onClick$={() => {
-          props.isBeerGiven.value = !props.isBeerGiven.value;
-        }}
-      >
-        Give/ Take a beer to Misko...
-      </button>
+      <div>
+        <button
+          onClick$={() => {
+            props.isBeerGiven.value = !props.isBeerGiven.value;
+          }}
+        >
+          Give/ Take a beer to Misko...
+        </button>
+      </div>
     </>
   );
 });
